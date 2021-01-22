@@ -1,5 +1,6 @@
 const articleSideBar = require("./config/articleSideBar");
 const issueSideBar = require("./config/issueSideBar");
+const notesSideBar = require("./config/notesSideBar");
 
 module.exports = {
     title: 'Blog',
@@ -9,16 +10,18 @@ module.exports = {
         '@vuepress/back-to-top'
     ],
     themeConfig: {
+        lastUpdated: true,
         nav: [
             { text: '首页', link: '/' },
             { text: '博文', link: '/article/' },
             { text: '杂文', link: '/issue/' },
-            { text: '关于我', link: '/about/' },
+            { text: '读书笔记', link: '/notes/' },
             { text: 'GitHub', link: 'https://github.com/galaxynova1999' },
         ],
         sidebar: {
             '/article/': articleSideBar,
-            '/issue/': issueSideBar
+            '/issue/': issueSideBar,
+            '/notes/': notesSideBar,
         }
     }
 }
