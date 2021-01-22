@@ -1,0 +1,20 @@
+{
+  "name": "final-frontier",
+  "version": "0.0.1",
+  "description": "A Personal Technical Blog Powered By VuePress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "author": "wangjie",
+  "license": "ISC",
+  "dependencies": {
+    "vuepress": "^1.8.0"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.8.0",
+    "@vuepress/plugin-nprogress": "^1.8.0"
+  }
+}
