@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>空值合并运算符 | Blog</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/final-frontier/assets/css/0.styles.a0cc0dd2.css" as="style"><link rel="preload" href="/final-frontier/assets/js/app.5634c384.js" as="script"><link rel="preload" href="/final-frontier/assets/js/2.ed649f41.js" as="script"><link rel="preload" href="/final-frontier/assets/js/6.7fec2123.js" as="script"><link rel="prefetch" href="/final-frontier/assets/js/10.4143c06a.js"><link rel="prefetch" href="/final-frontier/assets/js/11.a6dad173.js"><link rel="prefetch" href="/final-frontier/assets/js/12.7807ec72.js"><link rel="prefetch" href="/final-frontier/assets/js/13.fcd85dc5.js"><link rel="prefetch" href="/final-frontier/assets/js/14.155eaf1b.js"><link rel="prefetch" href="/final-frontier/assets/js/15.6fd67506.js"><link rel="prefetch" href="/final-frontier/assets/js/16.0ab28d14.js"><link rel="prefetch" href="/final-frontier/assets/js/17.b396064a.js"><link rel="prefetch" href="/final-frontier/assets/js/18.158bca34.js"><link rel="prefetch" href="/final-frontier/assets/js/19.20bb0d83.js"><link rel="prefetch" href="/final-frontier/assets/js/20.4019d9ca.js"><link rel="prefetch" href="/final-frontier/assets/js/3.dcb5c1f1.js"><link rel="prefetch" href="/final-frontier/assets/js/4.70f8d76a.js"><link rel="prefetch" href="/final-frontier/assets/js/5.d2427f03.js"><link rel="prefetch" href="/final-frontier/assets/js/7.42457597.js"><link rel="prefetch" href="/final-frontier/assets/js/8.38464b64.js"><link rel="prefetch" href="/final-frontier/assets/js/9.df2bcd5c.js">
+    <link rel="stylesheet" href="/final-frontier/assets/css/0.styles.a0cc0dd2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/final-frontier/" class="home-link router-link-active"><!----> <span class="site-name">Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/final-frontier/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/final-frontier/article/" class="nav-link router-link-active">
+  博文
+</a></div><div class="nav-item"><a href="/final-frontier/issue/" class="nav-link">
+  杂文
+</a></div><div class="nav-item"><a href="/final-frontier/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/galaxynova1999" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/final-frontier/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/final-frontier/article/" class="nav-link router-link-active">
+  博文
+</a></div><div class="nav-item"><a href="/final-frontier/issue/" class="nav-link">
+  杂文
+</a></div><div class="nav-item"><a href="/final-frontier/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/galaxynova1999" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>2021-01</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/final-frontier/article/2021-01/implement-promise.html" class="sidebar-link">实现一个Promise</a></li><li><a href="/final-frontier/article/2021-01/nullish-coalescing-operator.html" aria-current="page" class="active sidebar-link">空值合并运算符</a></li><li><a href="/final-frontier/article/2021-01/event-loop.html" class="sidebar-link">事件循环和消息队列</a></li><li><a href="/final-frontier/article/2021-01/browser-cache.html" class="sidebar-link">浅谈浏览器缓存</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><ol><li><p>空值合并操作符<code>??</code>是一个逻辑操作符，当左侧的操作数为 <code>null</code>或者<code>undefined</code>时，返回其右侧操作数，否则返回左侧操作数。</p> <p>例如：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> nullValue <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> emptyText <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span> <span class="token comment">// 空字符串，也是一个假值</span>
+<span class="token keyword">const</span> someNumber <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> valA <span class="token operator">=</span> nullValue <span class="token operator">??</span> <span class="token string">&quot;valA 的默认值&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> valB <span class="token operator">=</span> emptyText <span class="token operator">??</span> <span class="token string">&quot;valB 的默认值&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> valC <span class="token operator">=</span> someNumber <span class="token operator">??</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>valA<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &quot;valA 的默认值&quot;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>valB<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &quot;&quot; (空字符串虽然是假值，但不是 null 或者 undefined)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>valC<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 42</span>
+</code></pre></div></li> <li><p>与逻辑或操作符<code>||</code>不同，逻辑或操作符会在左侧操作数为<a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Falsy" target="_blank" rel="noopener noreferrer">假值<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>时返回右侧操作数</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> text <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>count <span class="token operator">||</span> <span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 42</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>count <span class="token operator">??</span> <span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>text <span class="token operator">||</span> <span class="token string">'hi'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &quot;hi!&quot;</span>
+</code></pre></div></li> <li><p>使用逻辑或来赋值一般不会出现问题，但比较特殊的就是数字零，零也是一种假值，所以如果我们非常明确我们就是要在左侧为null或者是undefined的时候赋默认值，那么使用空值合并运算符会更加安全</p></li> <li><p>空值合并运算符与或运算符等一起使用时的运算优先级还暂未定义，所有目前使用时要注意不要与其他运算符连用</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">null</span> <span class="token operator">||</span> <span class="token keyword">undefined</span> <span class="token operator">??</span> <span class="token string">&quot;foo&quot;</span><span class="token punctuation">;</span>   <span class="token comment">// 抛出 SyntaxError</span>
+<span class="token boolean">true</span> <span class="token operator">||</span> <span class="token keyword">undefined</span> <span class="token operator">??</span> <span class="token string">&quot;foo&quot;</span><span class="token punctuation">;</span>  <span class="token comment">// 抛出 SyntaxError</span>
+</code></pre></div></li> <li><p>空值合并运算符具有和或运算符等一样的短路特性</p></li> <li><p>浏览器兼容性</p> <p><img src="/final-frontier/assets/img/img1.104ef289.png" alt="canIUse"></p> <p>目前来说这个特性还比较新，iOS上的safari从13.7才开始支持</p></li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/final-frontier/article/2021-01/implement-promise.html" class="prev">
+        实现一个Promise
+      </a></span> <span class="next"><a href="/final-frontier/article/2021-01/event-loop.html">
+        事件循环和消息队列
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/final-frontier/assets/js/app.5634c384.js" defer></script><script src="/final-frontier/assets/js/2.ed649f41.js" defer></script><script src="/final-frontier/assets/js/6.7fec2123.js" defer></script>
+  </body>
+</html>

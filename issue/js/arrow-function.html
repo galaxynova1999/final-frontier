@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>箭头函数和普通函数的区别 | Blog</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/final-frontier/assets/css/0.styles.a0cc0dd2.css" as="style"><link rel="preload" href="/final-frontier/assets/js/app.5634c384.js" as="script"><link rel="preload" href="/final-frontier/assets/js/2.ed649f41.js" as="script"><link rel="preload" href="/final-frontier/assets/js/19.20bb0d83.js" as="script"><link rel="prefetch" href="/final-frontier/assets/js/10.4143c06a.js"><link rel="prefetch" href="/final-frontier/assets/js/11.a6dad173.js"><link rel="prefetch" href="/final-frontier/assets/js/12.7807ec72.js"><link rel="prefetch" href="/final-frontier/assets/js/13.fcd85dc5.js"><link rel="prefetch" href="/final-frontier/assets/js/14.155eaf1b.js"><link rel="prefetch" href="/final-frontier/assets/js/15.6fd67506.js"><link rel="prefetch" href="/final-frontier/assets/js/16.0ab28d14.js"><link rel="prefetch" href="/final-frontier/assets/js/17.b396064a.js"><link rel="prefetch" href="/final-frontier/assets/js/18.158bca34.js"><link rel="prefetch" href="/final-frontier/assets/js/20.4019d9ca.js"><link rel="prefetch" href="/final-frontier/assets/js/3.dcb5c1f1.js"><link rel="prefetch" href="/final-frontier/assets/js/4.70f8d76a.js"><link rel="prefetch" href="/final-frontier/assets/js/5.d2427f03.js"><link rel="prefetch" href="/final-frontier/assets/js/6.7fec2123.js"><link rel="prefetch" href="/final-frontier/assets/js/7.42457597.js"><link rel="prefetch" href="/final-frontier/assets/js/8.38464b64.js"><link rel="prefetch" href="/final-frontier/assets/js/9.df2bcd5c.js">
+    <link rel="stylesheet" href="/final-frontier/assets/css/0.styles.a0cc0dd2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/final-frontier/" class="home-link router-link-active"><!----> <span class="site-name">Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/final-frontier/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/final-frontier/article/" class="nav-link">
+  博文
+</a></div><div class="nav-item"><a href="/final-frontier/issue/" class="nav-link router-link-active">
+  杂文
+</a></div><div class="nav-item"><a href="/final-frontier/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/galaxynova1999" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/final-frontier/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/final-frontier/article/" class="nav-link">
+  博文
+</a></div><div class="nav-item"><a href="/final-frontier/issue/" class="nav-link router-link-active">
+  杂文
+</a></div><div class="nav-item"><a href="/final-frontier/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/galaxynova1999" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端框架篇</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JavaScript篇</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/final-frontier/issue/js/arrow-function.html" aria-current="page" class="active sidebar-link">箭头函数和普通函数的区别</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>TypeScript篇</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS篇</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>浏览器篇</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>网络篇</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>NodeJS篇</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><ol><li><p>箭头函数全都是匿名函数<br>
+普通函数可以有匿名函数，也可以有具名函数, 而箭头函数全都是匿名函数</p></li> <li><p>箭头函数不能用于构造函数<br>
+普通函数可以用于构造函数，以此创建对象实例。但是箭头函数并不能用作构造函数，根本原因是箭头函数没有自己的this</p></li> <li><p>箭头函数中this的指向不同<br>
+在普通函数中，this总是指向调用它的对象，如果用作构造函数，它指向创建的对象实例。
+箭头函数的this指向词法作用域的this，在书写时绑定。// TODO</p></li> <li><p>箭头函数不具有arguments对象<br>
+每一个普通函数调用后都具有一个arguments对象，用来存储实际传递的参数。 但是箭头函数并没有此对象。</p></li> <li><p>其他区别</p> <ul><li>箭头函数不能用做Generator函数。</li> <li>箭头函数不具有prototype原型对象。</li> <li>箭头函数不具有super。</li> <li>箭头函数不具有new.target。</li></ul></li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/final-frontier/issue/framework/react/set-state.html" class="prev">
+        setState那些事
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/final-frontier/assets/js/app.5634c384.js" defer></script><script src="/final-frontier/assets/js/2.ed649f41.js" defer></script><script src="/final-frontier/assets/js/19.20bb0d83.js" defer></script>
+  </body>
+</html>
