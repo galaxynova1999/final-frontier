@@ -3,6 +3,7 @@ const issueSideBar = require("./config/issueSideBar");
 
 module.exports = {
     title: 'Blog',
+    base: '/final-frontier/',
     plugins: [
         '@vuepress/nprogress',
         '@vuepress/back-to-top'
