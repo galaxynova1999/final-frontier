@@ -1,5 +1,7 @@
 <template>
-  <div>主页建设中</div>
+  <div>
+    <h2>关于我</h2>
+  </div>
 </template>
 
 <script>

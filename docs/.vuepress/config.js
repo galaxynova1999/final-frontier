@@ -9,7 +9,14 @@ module.exports = {
         '@vuepress/nprogress',
         '@vuepress/back-to-top'
     ],
+    head: [
+        [
+            'link',
+            { rel: 'icon', href: 'favicon.png'}
+        ]
+    ],
     themeConfig: {
+        logo: '/favicon.png',
         lastUpdated: true,
         nav: [
             { text: '首页', link: '/' },
