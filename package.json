@@ -12,10 +12,9 @@
   "author": "wangjie",
   "license": "ISC",
   "dependencies": {
+    "@vuepress/plugin-back-to-top": "^1.8.2",
+    "@vuepress/plugin-nprogress": "^1.8.2",
     "vuepress": "^1.8.0"
   },
-  "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.8.0",
-    "@vuepress/plugin-nprogress": "^1.8.0"
-  }
+  "devDependencies": {}
 }

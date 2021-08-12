@@ -1,6 +1,6 @@
 module.exports =  [
     {
-        title: '前端框架篇',
+        title: '前端框架',
         children: [
             {
                 title: 'Angular',
@@ -23,7 +23,7 @@ module.exports =  [
         ]
     },
     {
-        title: 'JavaScript篇',
+        title: 'JavaScript',
         children: [
             {
                 title: '箭头函数和普通函数的区别',
@@ -32,18 +32,18 @@ module.exports =  [
         ]
     },
     {
-        title: 'TypeScript篇'
+        title: 'TypeScript'
     },
     {
-        title: 'CSS篇'
+        title: 'CSS'
     },
     {
-        title: '浏览器篇'
+        title: '浏览器'
     },
     {
-        title: '网络篇',
+        title: '网络',
     },
     {
-        title: 'NodeJS篇'
+        title: 'NodeJS'
     }
 ]
