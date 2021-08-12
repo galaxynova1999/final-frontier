@@ -4,12 +4,6 @@ module.exports =  [
         children: [
             {
                 title: 'Angular',
-                children: [
-                    {
-                        title: '123',
-                        path: './framework/angular/Angular'
-                    }
-                ]
             },
             {
                 title:'React',
@@ -17,6 +11,10 @@ module.exports =  [
                     {
                         title: 'setState那些事',
                         path: './framework/react/set-state'
+                    },
+                    {
+                        title: 'React性能优化的一点看法',
+                        path: './framework/react/react-performance'
                     }
                 ]
             }
