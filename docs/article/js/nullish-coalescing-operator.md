@@ -39,6 +39,6 @@ title: 空值合并运算符
 
 6. 浏览器兼容性
    
-   ![canIUse](./image/img1.png)
+   ![canIUse](../image/img1.png)
    
    目前来说这个特性还比较新，iOS上的safari从13.7才开始支持

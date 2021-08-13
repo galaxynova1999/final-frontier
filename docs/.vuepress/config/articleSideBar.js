@@ -1,24 +1,57 @@
 module.exports =  [
     {
-        title: '2021-01',
-        collapsable: false,
+        title: '前端框架',
         children: [
             {
+                title: 'setState那些事',
+                path: './framework/set-state'
+            },
+            {
+                title: 'React性能优化的一点看法',
+                path: './framework/react-performance'
+            }
+        ]
+    },
+    {
+        title: 'JS & TS',
+        children: [
+            {
+                title: '箭头函数和普通函数的区别',
+                path: './js/arrow-function'
+            },
+            {
                 title: '实现一个Promise',
-                path: './2021-01/implement-promise',
+                path: './js/implement-promise',
             },
             {
                 title: '空值合并运算符',
-                path: './2021-01/nullish-coalescing-operator',
+                path: './js/nullish-coalescing-operator',
+            },
+        ]
+    },
+    {
+        title: '前端工程化',
+    },
+    {
+        title: 'HTML/CSS'
+    },
+    {
+        title: '浏览器',
+        children: [
+            {
+                title: '浅谈浏览器缓存',
+                path: './browser/browser-cache'
             },
             {
                 title: '事件循环和消息队列',
-                path: './2021-01/event-loop',
+                path: './browser/event-loop',
             },
-            {
-                title: '浅谈浏览器缓存',
-                path: './2021-01/browser-cache'
-            }
         ]
+    },
+    {
+        title: '网络',
+    },
+    {
+        title: 'NodeJS'
     }
 ]
