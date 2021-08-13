@@ -1,5 +1,5 @@
 ---
-sidebarDepth: 2
+title: React性能优化的一点看法
 ---
 
 [[toc]]

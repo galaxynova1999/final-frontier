@@ -1,5 +1,6 @@
 ---
 sidebarDepth: 2
+title: 浅谈浏览器缓存
 ---
 ## 浏览器缓存策略
 

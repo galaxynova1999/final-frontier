@@ -1,32 +1,19 @@
 module.exports =  [
     {
         title: '前端框架',
+        collapsable: false,
         children: [
-            {
-                title: 'setState那些事',
-                path: './framework/set-state'
-            },
-            {
-                title: 'React性能优化的一点看法',
-                path: './framework/react-performance'
-            }
+            './framework/set-state',
+            './framework/react-performance',
         ]
     },
     {
         title: 'JS & TS',
         children: [
-            {
-                title: '箭头函数和普通函数的区别',
-                path: './js/arrow-function'
-            },
-            {
-                title: '实现一个Promise',
-                path: './js/implement-promise',
-            },
-            {
-                title: '空值合并运算符',
-                path: './js/nullish-coalescing-operator',
-            },
+             './js/arrow-function',
+             './js/implement-promise',
+             './js/nullish-coalescing-operator',
+             './js/does-js-need-semicolon'
         ]
     },
     {
@@ -38,14 +25,8 @@ module.exports =  [
     {
         title: '浏览器',
         children: [
-            {
-                title: '浅谈浏览器缓存',
-                path: './browser/browser-cache'
-            },
-            {
-                title: '事件循环和消息队列',
-                path: './browser/event-loop',
-            },
+             './browser/browser-cache',
+             './browser/event-loop'
         ]
     },
     {
@@ -53,5 +34,8 @@ module.exports =  [
     },
     {
         title: 'NodeJS'
+    },
+    {
+        title: '技术扩展'
     }
 ]
