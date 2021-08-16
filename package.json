@@ -11,11 +11,18 @@
   },
   "author": "wangjie",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "post-commit": "npm run deploy"
+    }
+  },
   "dependencies": {
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "@vuepress/plugin-nprogress": "^1.8.2",
     "vuepress": "^1.8.0",
     "vuepress-plugin-reading-progress": "^1.0.10"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "husky": "^4.3.8"
+  }
 }

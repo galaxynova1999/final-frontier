@@ -3,6 +3,9 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+# 提交代码到远端
+git push
+
 # 生成静态文件
 npm run build
 
