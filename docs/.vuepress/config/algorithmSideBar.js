@@ -1,9 +1,11 @@
 module.exports =  [
     {
-        title: '排序',
+        title: 'LeetCode',
         collapsable: false,
         children: [
-            './sort/topk',
+            './leetcode/topk',
+            './leetcode/regular-expression-matching',
+            './leetcode/lru'
         ]
     }
 ]

@@ -3,7 +3,6 @@ module.exports =  [
         title: '前端框架',
         collapsable: false,
         children: [
-            './framework/set-state',
             './framework/react-performance',
         ]
     },
@@ -20,6 +19,10 @@ module.exports =  [
     {
         title: '前端工程化',
         collapsable: false,
+        children: [
+            './engineering/webpack-hash',
+            './engineering/webpack-hmr'
+        ]
     },
     {
         title: 'HTML/CSS',
@@ -41,11 +44,17 @@ module.exports =  [
         title: 'NodeJS',
         collapsable: false,
         children: [
-            './nodejs/what-is-node-js'
+            './nodejs/what-is-node-js',
+            './nodejs/fe-module-system'
         ]
     },
     {
         title: '技术扩展',
         collapsable: false,
+        children: [
+            './tech/swagger-ts',
+            './tech/ast',
+            './tech/what-is-lerna'
+        ]
     }
 ]

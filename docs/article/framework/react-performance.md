@@ -377,6 +377,19 @@ const onChange = useCallback(temp, []);
 1. `函数 A` 在 useEffect 内部被调用，为了避免 useEffect 的频繁触发，所以我用useCallback将`函数 A` 包起来。
 2. `函数 B` 在另一个使用useCallback包裹的`函数 C` 中被调用,为了避免这个`函数 C` 频繁变更,所以我用useCallback将`函数 B` 包起来。
 
+### 争论
+为什么会有争论呢？这来自我的某位张姓同事:smirk:,在某个项目他对Review他的代码的人提出的关于回调函数都使用
+useCallback包裹一下的comment表示十分不爽:joy: ，并提出：不要用useCallback。  
+先贴一张Dan在推特上的回答：
+![Dan](../image/dan-answer.png)
+在众多关于要不要使用useCallback方面，网上有很多争论，而Dan的意思是大部分情况下，我们都不需要使用useCallback
+，把每一个Click事件的处理函数都包上useCallback是没有必要的。  
+而这位张同学也提出了自己的论点：  
+>&emsp;&emsp;事实上大多数情况下都没必要使用 useCallback，你给的这个链接里也注释了：推荐使用 pass dispatch down in context 而不是在 props 中使用单独的 callback。  
+&emsp;&emsp;单纯地从XX来讲，既然我们已经用了redux，那么没必要处处都useCallback，因为需要传递回调的地方基本都是自定义组件，项目里 90% 的自定义组件都是组件树的叶子结点，重绘开销基本可以忽略不计，而剩下的 10% 的情况，大概率是组件设计不当，以至于需要多层透传 event callback，这种情况需要的是重构代码，而不是 useCallback 来掩耳盗铃。  
+&emsp;&emsp;其次，从设计初衷上讲，useCallback更适用于包含大量dispatch操作的事件回调中，很多回调仅包含简单的路由跳转和数据校验，那么完全没必要使用 useCallback。  
+&emsp;&emsp;    最后，退到一万步讲，真的觉得自己要用 useCallback 了，单页面 dom 量级在 1e5 以下的项目，没必要使用 useCallback。
+
 
 ### 其他优化手段
 
