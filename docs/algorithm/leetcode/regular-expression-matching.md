@@ -1,6 +1,10 @@
 ---
-title: 正则表达式匹配
+title: 10. 正则表达式匹配
 ---
+
+:::tip 原题链接
+[LeetCode 10](https://leetcode-cn.com/problems/regular-expression-matching/)
+:::
 
 ```typescript
 function isMatch(s: string, p: string): boolean {

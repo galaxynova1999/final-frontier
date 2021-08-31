@@ -1,8 +1,8 @@
 ---
-title: 无重复子符的最大长度
+title: 3. 无重复子符的最大长度
 ---
 
-::: tip
+::: tip 原题链接
 [LeetCode 3](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 :::
 

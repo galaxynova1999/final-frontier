@@ -1,6 +1,9 @@
 ---
-title: LRU缓存
+title: 146. LRU缓存
 ---
+:::tip 原题链接
+[LeetCode 146](https://leetcode-cn.com/problems/lru-cache/)
+:::
 
 ```typescript
 const Node = (key: any, value: any) => {
