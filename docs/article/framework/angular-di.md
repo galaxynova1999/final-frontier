@@ -18,7 +18,7 @@ title: Angular中的DI
 
 在`<nz-description>`组件中添加自己的`<private-description-item>`组件，不会显示。
 原因分析：在`nz-description`组件中, Antd使用了`@ContentChildren`来接收要渲染的子组件。如下图：
-![code](../image/ng-description.png)
+![code](./image/angular-di-1.png)
 
 `@ContentChildren(NzDescriptionsItemComponent)`指定了可以被渲染的子组件仅限于`NzDescriptionsItemComponent`类型  
 不接受其他任何组件，本质上`@ContentChildren`是从内容投影中选择了一部分要渲染的内容。
@@ -70,6 +70,12 @@ export class PrivateDescriptionItemComponent extends NzDescriptionsItemComponent
 2. 指定`providers`属性，其中对外暴露`NzDescriptionsItemComponent`, 并指定`Angular`使用已存在的值：
 `useExist(forwardRef(() => PrivateDescriptionItemComponent))`对外转发当前组件。
 
+### useClass与useExist的区别
+先看一张来自stackOverFlow的图片：
+![di](./image/angular-di-2.png)
+
+
 ### 参考文章
-1. https://stackoverflow.com/questions/49278479/contentchildren-with-multiple-content-types
-2. https://angular.cn/guide/dependency-injection-providers
+1. [stackOverFlow](https://stackoverflow.com/questions/49278479/contentchildren-with-multiple-content-types)
+2. [官方文档](https://angular.cn/guide/dependency-injection-providers)
+3. [Angular Dependency Injection](https://chgc.gitbooks.io/another-book-about-angular/content/chapter11/di.html)

@@ -27,15 +27,21 @@ const generateBar = (pathname, pathNameMap) => {
     directory.forEach((dir) => {
         if(pathNameMap.has(dir)) {
             const subDir = fs.readdirSync(pathname + `/${dir}`);
-            const filenames = subDir.map(sub => sub.split(".")[0]);
-            const filenamesWithPath = generatePath(dir, filenames);
+            const filenames = subDir.reduce((prev, sub) => {
+                if(sub !== 'image') {
+                   const name = sub.split(".")[0];
+                   prev.push(`./${dir}/${name}`);
+                }
+                return prev;
+            }, []);
             exportObject.push({
                 title: pathNameMap.get(dir),
                 collapsable: false,
-                children: filenamesWithPath
+                children: filenames
             })
         }
     })
+    console.log(exportObject);
     return exportObject;
 }
 

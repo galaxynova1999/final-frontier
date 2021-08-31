@@ -381,7 +381,7 @@ const onChange = useCallback(temp, []);
 为什么会有争论呢？这来自我的某位张姓同事:smirk:,在某个项目他对Review他的代码的人提出的关于回调函数都使用
 useCallback包裹一下的comment表示十分不爽:joy: ，并提出：不要用useCallback。  
 先贴一张Dan在推特上的回答：
-![Dan](../image/dan-answer.png)
+![Dan](./image/react-performance-1.png)
 在众多关于要不要使用useCallback方面，网上有很多争论，而Dan的意思是大部分情况下，我们都不需要使用useCallback
 ，把每一个Click事件的处理函数都包上useCallback是没有必要的。  
 而这位张同学也提出了自己的论点：  
