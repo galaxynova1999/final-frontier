@@ -1,5 +1,5 @@
 ---
-title: 实现一个Promise
+title: 实现一个 Promise
 ---
 ## 什么是Promise A+ 规范
 Promise A+规范是由Promises/A+ organization提出的一个Promise then方法的实现标准，需要注意的是，这份标准并未对如何创建、resolve、reject Promise做出规定

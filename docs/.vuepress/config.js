@@ -4,26 +4,32 @@ const articlePath = path.resolve(__dirname, '../article');
 const algorithmPath = path.resolve(__dirname, '../algorithm');
 const notesPath = path.resolve(__dirname, '../notes');
 const algorithmMap = new Map([
-    ['leetcode', 'LeetCode'],
+    ['leetcode', {name: 'LeetCode', order: 1, collapsable: false}],
 ]);
 const articleMap = new Map([
-    ['framework', '前端框架'],
-    ['js', 'JS & TS'],
-    ['browser', '浏览器'],
-    ['engineering', '前端工程化'],
-    ['nodejs', 'NodeJS'],
-    ['tech', '技术扩展'],
+    ['framework', {name: '前端框架', order: 1, collapsable: false}],
+    ['js', {name: 'JS & TS', order: 2, collapsable: false}],
+    ['browser', {name: '浏览器', order: 5, collapsable: false}],
+    ['engineering', {name: '前端工程化', order: 3, collapsable: false}],
+    ['nodejs', {name: 'NodeJS', order: 6, collapsable: false}],
+    ['tech', {name: '技术扩展', order: 4, collapsable: false}],
 ]);
 const notesMap = new Map([
-    ['professional-js-for-web-developers', 'JS高级程序设计'],
-    ['you-dont-know-js','你不知道的JS']
+    ['professional-js-for-web-developers', {name: 'JS高级程序设计', order: 1, collapsable: false}],
+    ['you-dont-know-js',{name: '你不知道的JS', order: 2, collapsable: false}]
 ]);
-const generatePath = (path, names) => {
-    return names.map(i => `./${path}/${i}`);
-}
 const generateBar = (pathname, pathNameMap) => {
     const directory = fs.readdirSync(pathname);
     const exportObject = [];
+    directory.sort((a, b) => {
+        if(pathNameMap.has(a) &&
+            pathNameMap.has(b) &&
+            pathNameMap.get(a).order > pathNameMap.get(b).order
+        ) {
+            return 1;
+        }
+        return -1;
+    });
     directory.forEach((dir) => {
         if(pathNameMap.has(dir)) {
             const subDir = fs.readdirSync(pathname + `/${dir}`);
@@ -35,13 +41,12 @@ const generateBar = (pathname, pathNameMap) => {
                 return prev;
             }, []);
             exportObject.push({
-                title: pathNameMap.get(dir),
-                collapsable: false,
+                title: pathNameMap.get(dir).name,
+                collapsable: pathNameMap.get(dir).collapsable,
                 children: filenames
             })
         }
     })
-    console.log(exportObject);
     return exportObject;
 }
 

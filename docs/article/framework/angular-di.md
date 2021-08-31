@@ -74,8 +74,31 @@ export class PrivateDescriptionItemComponent extends NzDescriptionsItemComponent
 先看一张来自stackOverFlow的图片：
 ![di](./image/angular-di-2.png)
 
+四种类型的`provider`本质上都是经过一个工厂函数（`factory`）转化而来，`useClass`从参数中解析依赖然后创建一个新的类实例，
+而`useExist`返回目前已有的类实例（可以看作是创建了一个引用）  
+
+### useExist中的forwardRef
+```typescript
+// Angular 源码
+export function resolveForwardRef(type: any): any {
+  if (typeof type === 'function' && type.hasOwnProperty('__forward_ref__') &&
+      type.__forward_ref__ === forwardRef) {
+    return (<ForwardRefFn>type)();
+  } else {
+    return type;
+  }
+}
+```
+使用`forwardRef`包裹后，允许引用指向一个尚未被定义的实例（在本例中就是`PrivateDescriptionItemComponent`组件，其尚未被实例化）
+>For instance, forwardRef is used when the token which we need to refer to for the purposes of DI is declared, 
+> but not yet defined. It is also used when the token which we use when creating a query is not yet defined
+
+实现原理：闭包
+
 
 ### 参考文章
 1. [stackOverFlow](https://stackoverflow.com/questions/49278479/contentchildren-with-multiple-content-types)
 2. [官方文档](https://angular.cn/guide/dependency-injection-providers)
 3. [Angular Dependency Injection](https://chgc.gitbooks.io/another-book-about-angular/content/chapter11/di.html)
+4. [indepth.dev](https://indepth.dev/posts/1133/what-is-forwardref-in-angular-and-why-we-need-it)
+5. [offering.solutions](https://offering.solutions/blog/articles/2018/08/17/using-useclass-usefactory-usevalue-useexisting-with-treeshakeable-providers-in-angular/)
