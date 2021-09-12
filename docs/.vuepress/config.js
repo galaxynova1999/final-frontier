@@ -57,6 +57,9 @@ module.exports = {
         '@vuepress/nprogress',
         '@vuepress/back-to-top',
         'reading-progress',
+        ['mathjax', {
+             showError: true
+        }]
     ],
     head: [
         [

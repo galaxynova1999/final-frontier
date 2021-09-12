@@ -23,6 +23,8 @@
     "vuepress-plugin-reading-progress": "^1.0.10"
   },
   "devDependencies": {
-    "husky": "^4.3.8"
+    "husky": "^4.3.8",
+    "mathjax": "^3.1.2",
+    "vuepress-plugin-mathjax": "^1.2.8"
   }
 }
