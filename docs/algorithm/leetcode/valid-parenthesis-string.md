@@ -2,6 +2,10 @@
 title: 678. 有效的括号字符串
 ---
 
+:::tip 原题链接
+[LeetCode 678](https://leetcode-cn.com/problems/valid-parenthesis-string/)
+:::
+
 ```typescript
 /**
  在有星号的情况下，需要两个栈分别存储左括号和星号。从左到右遍历字符串，进行如下操作。
