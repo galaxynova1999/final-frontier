@@ -35,4 +35,20 @@ function lengthOfLongestSubstring(s: string): number {
 
    return max;
 };
+
+// 方法2
+function another(s: string): number {
+    const map = new Map<string, number>();
+    let answer = 0;
+    let rk = 0;
+    for(let i = 0; i < s.length; i++) {
+        if(map.has(s[i])) {
+            // 左指针移动到重复字符上一次出现位置的右侧
+            rk = Math.max(map.get(s[i]) + 1, rk);
+        }
+        answer = Math.max(i - rk + 1, answer);
+        map.set(s[i], i);
+    }
+    return answer;
+}
 ```
