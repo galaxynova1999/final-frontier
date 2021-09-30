@@ -4,24 +4,15 @@
   "description": "A Personal Technical Blog Powered By VuePress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "deploy": "bash deploy.sh"
+    "build": "vuepress build docs"
   },
   "author": "wangjie",
   "license": "ISC",
-  "husky": {
-    "hooks": {
-      "post-commit": "npm run deploy"
-    }
-  },
-  "dependencies": {},
   "devDependencies": {
     "@maginapp/vuepress-plugin-katex": "^1.0.11",
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "@vuepress/plugin-nprogress": "^1.8.2",
-    "husky": "^4.3.8",
     "vuepress": "^1.8.2",
     "vuepress-plugin-reading-progress": "^1.0.10"
   }
