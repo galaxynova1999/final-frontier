@@ -16,14 +16,13 @@
       "post-commit": "npm run deploy"
     }
   },
-  "dependencies": {
-    "@vuepress/plugin-back-to-top": "^1.8.2",
-    "@vuepress/plugin-nprogress": "^1.8.2",
-    "vuepress": "^1.8.0",
-    "vuepress-plugin-reading-progress": "^1.0.10"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@maginapp/vuepress-plugin-katex": "^1.0.11",
-    "husky": "^4.3.8"
+    "@vuepress/plugin-back-to-top": "^1.8.2",
+    "@vuepress/plugin-nprogress": "^1.8.2",
+    "husky": "^4.3.8",
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-reading-progress": "^1.0.10"
   }
 }
