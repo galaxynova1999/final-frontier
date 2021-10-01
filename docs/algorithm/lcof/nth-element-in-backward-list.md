@@ -1,5 +1,5 @@
 ---
-title: 剑指 Offer 22. 链表中倒数第k个节点
+title: 22. 链表中倒数第k个节点
 ---
 :::tip 原题链接
 [LeetCode](https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/)

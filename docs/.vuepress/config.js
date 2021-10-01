@@ -5,6 +5,8 @@ const algorithmPath = path.resolve(__dirname, '../algorithm');
 const notesPath = path.resolve(__dirname, '../notes');
 const algorithmMap = new Map([
     ['leetcode', {name: 'LeetCode', order: 1, collapsable: false}],
+    ['lcof', {name: '剑指Offer', order: 2, collapsable: false}],
+    ['extra', { name: '补充题', order: 3, collapsable: false}]
 ]);
 const articleMap = new Map([
     ['framework', {name: '前端框架', order: 1, collapsable: false}],
