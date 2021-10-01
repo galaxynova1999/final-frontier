@@ -36,8 +36,9 @@ module.exports = {
         logo: '/favicon.png',
         repo: 'galaxynova1999/final-frontier',
         docsDir: 'docs',
+        editLinks:true,
         smoothScroll: true,
-        editLinkText: '编辑此页',
+        editLinkText: '内容有误？编辑此文章',
         lastUpdated: '上次更新',
         markdown: {
             lineNumbers: true
