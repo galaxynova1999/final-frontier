@@ -56,5 +56,6 @@ module.exports = {
             '/algorithm/': algorithmNav,
             '/basic/': basicNav
         }
-    }
+    },
+    evergreen: true
 }
