@@ -2,7 +2,7 @@
 title: 实现JS常用工具函数
 ---
 
-### 实现深拷贝
+## 实现深拷贝
 方法一
 ```javascript
 function deepCopy(oldobj, newobj){
@@ -47,11 +47,25 @@ const deepClone = (obj: Object | null, caches:{ original:any, copy: any }[] = []
     
     return copy;
 }
-
-
-
-
-
-
-
 ```
+
+## 实现 new
+
+```typescript
+function newObj(superClass, ...rest) {
+    const obj = Object.create(superClass.prototype);
+    const returnObj = superClass.call(obj, ...rest);
+    return typeof returnObj === 'object' ? returnObj :obj;
+}
+```
+
+## 实现 Object.create
+```javascript
+function myCreate(proto){
+    function F () {} 
+    F.prototype = proto;
+    return new F();
+}
+```
+
+
