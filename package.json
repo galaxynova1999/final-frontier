@@ -2,9 +2,9 @@
   "name": "final-frontier",
   "version": "0.0.1",
   "description": "A Personal Technical Blog Powered By VuePress",
-  "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
+    "dev:no-chche": "vuepress dev docs --no-cache",
     "build": "vuepress build docs"
   },
   "author": "wangjie",

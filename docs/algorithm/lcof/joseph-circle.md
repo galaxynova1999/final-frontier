@@ -40,7 +40,7 @@ $$
 
 $$
 \begin{aligned}
-「n-1, m 问题」 && \rightarrow && 「n, m 问题」删除后 \\
+\text{「n-1, m 问题」} && \rightarrow && \text{「n, m 问题」删除后} \\
 0 && \rightarrow && t + 0 \\
 1 && \rightarrow && t + 1 \\
 ... && \rightarrow && ... \\
@@ -66,9 +66,9 @@ $$
 \begin{aligned}
 f(n) & = (f(n - 1) + t) \% n \\
 & = (f(n - 1) + m \% n) \% n \\
-& = (f(n - 1) \% n + m \% n \% n) \% n \quad  (模运算的基本性质)\\ 
-& = (f(n - 1) \% n + m \% n) \% n \quad (m \% n的结果一定小于n, 所以 m \% n \% n = m \% n)\\
-& = (f(n - 1) + m) \% n \quad (模运算性质的反向应用)
+& = (f(n - 1) \% n + m \% n \% n) \% n \quad  \text{(模运算的基本性质)}\\ 
+& = (f(n - 1) \% n + m \% n) \% n \quad \text{(}m \% n\text{的结果一定小于n, 所以} m \% n \% n = m \% n\text{)}\\
+& = (f(n - 1) + m) \% n \quad \text{(模运算性质的反向应用)}
 \end{aligned}
 $$
 
