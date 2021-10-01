@@ -52,10 +52,10 @@ const deepClone = (obj: Object | null, caches:{ original:any, copy: any }[] = []
 ## 实现 new
 
 ```typescript
-function newObj(superClass, ...rest) {
-    const obj = Object.create(superClass.prototype);
-    const returnObj = superClass.call(obj, ...rest);
-    return typeof returnObj === 'object' ? returnObj :obj;
+function newObj(_class, ...rest) {
+    const obj = Object.create(_class.prototype);
+    const returnObj = _class.call(obj, ...rest);
+    return typeof returnObj === 'object' ? returnObj : obj;
 }
 ```
 
@@ -68,4 +68,66 @@ function myCreate(proto){
 }
 ```
 
+## 实现sum(1)(2)(3)
 
+```javascript
+function currySum(fn) {
+    const param = [];
+    const _ = function (...rest) {
+        if(rest.length) {
+            param.push(...rest);
+            return _;
+        } else {
+            return fn.apply(null, param);
+        }
+    }
+    return _;
+}
+
+const _sum = (...rest) => {
+    return rest.reduce((prev, item) => {
+        return prev + item;
+    }, 0);
+}
+
+const sum = currySum(_sum);
+
+const result = sum(1)(2)(3, 4)();
+
+console.log(result); // 10
+```
+
+## 实现ES6 extends
+
+```javascript
+function Father(foo) {
+    this.content = [foo];
+}
+
+Father.prototype.someFunc = function (bar) {
+    this.content.push(bar);
+    console.log(this.content);
+};
+
+function Son(foo) {
+    Father.call(this, foo);
+}
+
+function extend() {
+    const sonPrototype = Object.create(Father.prototype);
+    // 修正原型中的constructor指向
+    sonPrototype.constructor = Son;
+    Son.prototype = sonPrototype;
+}
+
+extend();
+
+const son = new Son(2);
+const father = new Father(1);
+console.log(Son.prototype);
+son.someFunc(3); // [2, 3];
+father.someFunc(4); // [1, 4]; // 不受影响
+
+console.log(son instanceof Son, son instanceof Father); // true true 里氏替换原则 子类是父类的实例
+console.log(father instanceof Son, father instanceof Father); // false true
+```
