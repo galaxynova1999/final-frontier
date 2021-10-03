@@ -1,6 +1,7 @@
 ---
 home: true
 heroText: Final Frontier
+readingShow: false
 tagline: null
 heroImage: /logo.png
 features:
@@ -9,7 +10,7 @@ features:
 - title: 关于博客名
   details: 博客名 Final-Frontier 直译的意思是 最后的边疆，来自我最喜欢的科幻系列 ——《星际迷航》，在系列每部电影的最后，都会有这样一段激动人心的独白，代表着企业号飞船对于宇宙深处奥秘无尽的探索以及对于未知的追求才刚刚开始。
 - title: 关于我
-  details: 你好，我叫王杰。我是一名前端工程师，目前就职于猿辅导。
+  details: 我叫王杰，是一名前端工程师，目前就职于猿辅导。
 ---
 
 
