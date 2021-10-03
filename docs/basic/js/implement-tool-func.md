@@ -130,4 +130,7 @@ father.someFunc(4); // [1, 4]; // 不受影响
 
 console.log(son instanceof Son, son instanceof Father); // true true 里氏替换原则 子类是父类的实例
 console.log(father instanceof Son, father instanceof Father); // false true
+
+Son.prototype.anotherFunc = () => {}; // 不影响父类
+console.log(Son.prototype.__proto__ === Father.prototype) // true
 ```
