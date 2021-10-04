@@ -4,64 +4,6 @@ title: 146. LRU缓存
 :::tip 原题链接
 [LeetCode 146](https://leetcode-cn.com/problems/lru-cache/)
 :::
-### 📺视频题解
-
-![146. LRU缓存机制.mp4](42b5ca6a-4d69-4f7d-bf63-5c196aa23b44)
-
-### 📖文字题解
-
-#### 前言
-
-实现本题的两种操作，需要用到一个哈希表和一个双向链表。在面试中，面试官一般会期望读者能够自己实现一个简单的双向链表，而不是使用语言自带的、封装好的数据结构。在 `Python` 语言中，有一种结合了哈希表与双向链表的数据结构 `OrderedDict`，只需要短短的几行代码就可以完成本题。在 `Java` 语言中，同样有类似的数据结构 `LinkedHashMap`。这些做法都不会符合面试官的要求，因此下面只给出使用封装好的数据结构实现的代码，而不多做任何阐述。
-
-```Python [sol0-Python3]
-class LRUCache(collections.OrderedDict):
-
-    def __init__(self, capacity: int):
-        super().__init__()
-        self.capacity = capacity
-
-
-    def get(self, key: int) -> int:
-        if key not in self:
-            return -1
-        self.move_to_end(key)
-        return self[key]
-
-    def put(self, key: int, value: int) -> None:
-        if key in self:
-            self.move_to_end(key)
-        self[key] = value
-        if len(self) > self.capacity:
-            self.popitem(last=False)
-```
-
-```Java [sol0-Java]
-class LRUCache extends LinkedHashMap<Integer, Integer>{
-    private int capacity;
-    
-    public LRUCache(int capacity) {
-        super(capacity, 0.75F, true);
-        this.capacity = capacity;
-    }
-
-    public int get(int key) {
-        return super.getOrDefault(key, -1);
-    }
-
-    public void put(int key, int value) {
-        super.put(key, value);
-    }
-
-    @Override
-    protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
-        return size() > capacity; 
-    }
-}
-```
-
-#### 哈希表 + 双向链表
-
 
 LRU 缓存机制可以通过哈希表辅以双向链表实现，我们用一个哈希表和一个双向链表维护所有在缓存中的键值对。
 
