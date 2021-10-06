@@ -134,3 +134,41 @@ console.log(father instanceof Son, father instanceof Father); // false true
 Son.prototype.anotherFunc = () => {}; // 不影响父类
 console.log(Son.prototype.__proto__ === Father.prototype) // true
 ```
+
+
+## 实现深拷贝
+
+```javascript
+const deepClone = (sourceObj, cache = new Map()) => {
+
+    if(typeof sourceObj !== 'object') return sourceObj;
+
+    if(cache.has(sourceObj)) return cache.get(sourceObj);
+
+    // 深拷贝初始值：对象/数组
+    let copy = Array.isArray(sourceObj) ? [] : {};
+
+    // 防止循环引用
+    cache.set(sourceObj, copy);
+
+    for (let key in sourceObj) {
+        if (sourceObj.hasOwnProperty(key)) {
+            if (sourceObj[key] instanceof Date) {
+                // 判断日期类型
+                copy[key] = new Date(sourceObj[key].getTime());
+            } else if (sourceObj[key] instanceof RegExp) {
+                // 判断正则类型
+                copy[key] = new RegExp(sourceObj[key]);
+            } else {
+                // 当元素属于对象（排除 Date、RegExp、DOM）类型时递归拷贝
+                copy[key] = (typeof sourceObj[key] === 'object') ? deepClone(sourceObj[key], cache) : sourceObj[key];
+            }
+        }
+    }
+
+
+    return copy;
+}
+```
+
+

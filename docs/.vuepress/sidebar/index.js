@@ -31,7 +31,8 @@ const notesMap = new Map([
 
 const basicMap = new Map([
     ['js', {name: 'JS & ES6', order: 1, collapsable: false}],
-    ['css', {name: 'CSS', order: 2, collapsable: false}]
+    ['css', {name: 'CSS', order: 2, collapsable: false}],
+    ['data-structure', {name: '数据结构', order: 3, collapsable: false}]
 ]);
 
 
