@@ -67,3 +67,29 @@ function optimizedQuickSort(array, low = 0, high = array.length - 1) {
 }
 
 ```
+
+## 冒泡排序
+
+```javascript
+/**
+ * @param {Array<number>} array
+ */
+const bubbleSort = (array) => {
+    const len = array.length - 1;
+    let hasSwap = false;
+    // 每一趟 将一个最大的数放到了 i 位置上
+    // 然后向左移动一位
+    for(let i = len; i >= 1; i--) {
+        hasSwap = false;
+        for(let j = 1; j <= i; j++) {
+            if(array[j - 1] > array[j]) {
+                [array[j - 1], array[j]] = [array[j], array[j - 1]];
+                hasSwap = true;
+            }
+        }
+        if(!hasSwap) {
+            return;
+        }
+    }
+}
+```
