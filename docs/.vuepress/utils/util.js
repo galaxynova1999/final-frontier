@@ -17,7 +17,7 @@ const generateBar = (pathname, pathNameMap) => {
         if(pathNameMap.has(dir)) {
             const subDir = fs.readdirSync(pathname + `/${dir}`);
             const filenames = subDir.reduce((prev, sub) => {
-                if(sub !== 'image') {
+                if(sub !== 'image' && sub !== 'todo') {
                     const name = sub.split(".")[0];
                     prev.push(`./${dir}/${name}`);
                     if(!firstFileName) {
@@ -26,11 +26,13 @@ const generateBar = (pathname, pathNameMap) => {
                 }
                 return prev;
             }, []);
-            exportObject.push({
-                title: pathNameMap.get(dir).name,
-                collapsable: pathNameMap.get(dir).collapsable,
-                children: filenames
-            })
+            if(filenames.length) {
+                exportObject.push({
+                    title: pathNameMap.get(dir).name,
+                    collapsable: pathNameMap.get(dir).collapsable,
+                    children: filenames
+                })
+            }
         }
     })
     return [exportObject, firstFileName];
