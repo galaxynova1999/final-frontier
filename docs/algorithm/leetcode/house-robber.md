@@ -26,8 +26,8 @@ $$
 
 $$
 \begin{cases}
-\textit{dp}[0] = \textit{nums}[0] & 只有一间房屋，则偷窃该房屋 \\
-\textit{dp}[1] = \max(\textit{nums}[0], \textit{nums}[1]) & 只有两间房屋，选择其中金额较高的房屋进行偷窃
+\textit{dp}[0] = \textit{nums}[0] & \text{只有一间房屋，则偷窃该房屋} \\
+\textit{dp}[1] = \max(\textit{nums}[0], \textit{nums}[1]) & \text{只有两间房屋，选择其中金额较高的房屋进行偷窃}
 \end{cases}
 $$
 
