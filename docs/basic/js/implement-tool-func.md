@@ -281,3 +281,35 @@ function isObjectValueEqual(a, b) {
     return true;
 }
 ```
+
+## 实现 call
+
+```javascript
+Function.prototype._call = function (context, ...args) {
+    context = context ?? window;
+    const funcSymbol = Symbol();
+    context[funcSymbol] = this;
+
+    const result = context[funcSymbol](...args);
+    delete context[funcSymbol];
+
+    return result;
+}
+```
+
+
+## 实现 bind
+```javascript
+Function.prototype.bind = function (context, ...args) {
+    if(typeof this !== 'function') throw new TypeError();
+
+    const func = this;
+
+    return function AnonymousFunc(...restArgs) {
+        if(this instanceof AnonymousFunc) {
+            return new func(...args, ...restArgs);
+        }
+        return func.call(context, ...args, ...restArgs);
+    }
+}
+```
