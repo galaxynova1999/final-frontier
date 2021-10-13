@@ -2,7 +2,7 @@
 title: 165. 比较版本号
 ---
 :::tip 原题链接
-[LeetCode 165](https://leetcode-cn.com/problems/compare-version-numbers/)
+[LeetCode](https://leetcode-cn.com/problems/compare-version-numbers/)
 :::
 
 ```typescript
