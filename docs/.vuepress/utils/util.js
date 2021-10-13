@@ -28,7 +28,7 @@ const generateBar = (pathname, pathNameMap) => {
             }, []);
             if(filenames.length) {
                 exportObject.push({
-                    title: pathNameMap.get(dir).name,
+                    title: `${pathNameMap.get(dir).name} (${filenames.length})`,
                     collapsable: pathNameMap.get(dir).collapsable,
                     children: filenames
                 })
