@@ -93,3 +93,43 @@ const bubbleSort = (array) => {
     }
 }
 ```
+
+
+## 堆排序
+```javascript
+const heapSort = (array) => {
+    let len = array.length; // 可变的
+    const swap = (i, j) => {
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+
+    const up = (i) => {
+        let target = i;
+        const leftChild = i * 2 + 1;
+        const rightChild = i * 2 + 2;
+        if(leftChild < len && array[leftChild] > array[target]) {
+            target = leftChild;
+        }
+        // 注意此处是与target比较  而不是 i 目的是找到左右孩子中的最大值
+        if(rightChild < len && array[rightChild] > array[target]) {
+            target = rightChild;
+        }
+        if(target !== i) {
+            swap(i, target);
+            up(target);
+        }
+    }
+    // 建堆
+    for(let i = Math.floor(array.length / 2 - 1); i >= 0; i--) {
+        up(i);
+    }
+
+    //排序
+    for(let i = array.length - 1; i >= 0; i--) {
+        swap(len - 1, 0);
+        len--; // 最后一位有序了
+        up(0);
+    }
+    return array;
+}
+```
