@@ -199,7 +199,7 @@ if (module.hot) {
 当更改`./content.js`的内容并保存时，可以看到页面没有刷新，但是内容已经被替换了。
 
 ## HMR原理
-![HMR原理](image/webpack-hmr-1.png)
+![HMR原理](../image/webpack-hmr-1.png)
 如上图所示，右侧`Server`端使用`webpack-dev-server`去启动本地服务，内部实现主要使用了`webpack`、`express`、`websocket`。
 
 - 使用`express`启动本地HTTP服务，响应浏览器访问资源的请求
