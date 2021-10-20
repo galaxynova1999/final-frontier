@@ -311,3 +311,47 @@ Function.prototype.bind = function (context, ...args) {
     }
 }
 ```
+
+## 实现数组降维
+```typescript
+const flat1 = (array: any[]) => {
+    const result = [];
+    while(array.length) {
+        const back = array.pop();
+        if(Array.isArray(back)) {
+            array.push(...back);
+        } else {
+            result.unshift(back);
+        }
+    }
+
+    return result;
+}
+
+const flat2 = (array: any[], res = []) => {
+    for(let item of array) {
+        if(Array.isArray(item)) {
+            flat2(item, res);
+        } else {
+            res.push(item);
+        }
+    }
+    return res;
+}
+
+const flat3 = (array: any[], depth: number = Infinity, res = [] ) => {
+    if(depth!== Infinity && depth < 0) {
+        res.push(array);
+        return;
+    }
+    for(let item of array) {
+        if(Array.isArray(item)) {
+            flat3(item, depth - 1, res);
+        } else {
+            res.push(item);
+        }
+    }
+    return res;
+
+}
+```
