@@ -355,3 +355,52 @@ const flat3 = (array: any[], depth: number = Infinity, res = [] ) => {
 
 }
 ```
+
+
+## 中间件
+```javascript
+const middleware = [];
+
+middleware.push((next) => {
+    console.log(11);
+    next();
+    next();
+    console.log(22);
+})
+
+middleware.push((next) => {
+    console.log(33);
+    next();
+    console.log(44);
+})
+
+middleware.push((next) => {
+    console.log(55);
+})
+
+middleware.push((next) => {
+    console.log(66);
+})
+
+function doMiddleWare(middles) {
+    return function () {
+        let index = -1;
+        function dispatch() {
+            index++;
+            if(index > middles.length - 1) {
+                return;
+            }
+            let execFunc = middles[index];
+            try {
+                return Promise.resolve(execFunc(dispatch));
+            } catch (err) {
+                return Promise.reject(err);
+            }
+        }
+        return dispatch();
+    }
+}
+doMiddleWare(middleware)();
+
+// 11 33 55 44 66 22
+```

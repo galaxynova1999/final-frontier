@@ -44,6 +44,7 @@ function another(s: string): number {
     for(let i = 0; i < s.length; i++) {
         if(map.has(s[i])) {
             // 左指针移动到重复字符上一次出现位置的右侧
+            // 必须是 max 因为 rk 指针不能回退
             rk = Math.max(map.get(s[i]) + 1, rk);
         }
         answer = Math.max(i - rk + 1, answer);
