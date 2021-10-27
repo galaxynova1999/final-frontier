@@ -12,7 +12,8 @@ const basicPath = path.resolve(__dirname, '../../basic');
 const algorithmMap = new Map([
     ['leetcode', {name: 'LeetCode', order: 1, collapsable: false}],
     ['lcof', {name: '剑指Offer', order: 2, collapsable: false}],
-    ['extra', { name: '补充题', order: 3, collapsable: false}]
+    ['extra', { name: '补充题', order: 3, collapsable: false}],
+    ['lcci', { name: '面试题', order: 4, collapsable: false}]
 ]);
 
 const articleMap = new Map([
