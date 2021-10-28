@@ -9,22 +9,23 @@ title: 剑指 Offer 54. 二叉搜索树的第k大节点
 
 ```typescript
 function kthLargest(root: TreeNode | null, k: number): number {
-   // 倒序中序遍历 获取第k个
-   let answer = Infinity;
-   const dfs = (node: TreeNode, n: number) => {
-       if(!node) return;
-       if(n === 0) return;
+    // 倒序中序遍历 获取第k个
+    let answer = Infinity;
+    const dfs = (node: TreeNode) => {
+        if(!node) return;
 
-       dfs(node.right, k - 1);
+        dfs(node.right);
 
-       if(--k === 0) {
-           return node.val;
-       }
+        if(k === 0) return;
+        if(--k === 0) {
+            answer = node.val;
+            return;
+        }
 
-       dfs(node.left, k - 1);
-   }
+        dfs(node.left);
+    }
 
-   dfs(root, k);
-   return answer;
+    dfs(root);
+    return answer;
 };
 ```
