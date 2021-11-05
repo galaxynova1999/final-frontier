@@ -47,7 +47,7 @@ module.exports = {
             { text: '首页', link: '/' },
             { text: '博文', link: `/article/${articleFilename}` },
             { text: '基础知识', link: `/basic/${basicFilename}`},
-            // { text: '算法', link: `/algorithm/${algorithmFilename}` },
+            { text: '算法', link: `/algorithm/${algorithmFilename}` },
             { text: '读书笔记', link: `/notes/${notesFilename}` }
         ],
         sidebar: {
