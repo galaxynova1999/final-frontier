@@ -1,7 +1,17 @@
 const fs = require('fs');
 
+/**
+ * 生成side bar配置
+ * @param {string} pathname
+ * @param {Map<string, {name: string; order: number; collapsable: boolean}>} pathNameMap
+ * @returns {[Array<{title: string; collapsable: boolean; children: string[]}>, string]}
+ */
 const generateBar = (pathname, pathNameMap) => {
     const directory = fs.readdirSync(pathname);
+    /**
+     *
+     * @type {Array<{title: string; collapsable: boolean; children: string[]}>}
+     */
     const exportObject = [];
     directory.sort((a, b) => {
         if(pathNameMap.has(a) &&
@@ -12,6 +22,9 @@ const generateBar = (pathname, pathNameMap) => {
         }
         return -1;
     });
+    /**
+     * @type {string | null}
+     */
     let firstFileName = null;
     directory.forEach((dir) => {
         if(pathNameMap.has(dir)) {
