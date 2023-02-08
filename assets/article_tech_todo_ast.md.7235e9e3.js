@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./app.fd297097.js";const _=JSON.parse('{"title":"Babel 和 AST","description":"","frontmatter":{"title":"Babel 和 AST"},"headers":[],"relativePath":"article/tech/todo/ast.md","lastUpdated":1633624571000}'),o={name:"article/tech/todo/ast.md"};function r(s,c,n,d,i,l){return a(),e("div")}const m=t(o,[["render",r]]);export{_ as __pageData,m as default};
