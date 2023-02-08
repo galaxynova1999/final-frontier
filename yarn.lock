@@ -263,14 +263,6 @@
   resolved "http://registry.npm.baidu-int.com/@esbuild%2fwin32-x64/-/win32-x64-0.16.17.tgz#c5a1a4bfe1b57f0c3e61b29883525c6da3e5c091"
   integrity sha512-y+EHuSchhL7FjHgvQL/0fnnFmO4T1bhvWANX6gcnqTjtnKWbTvUMCpGnv2+t+31d7RzyEAYAd4u2fnIhHL6N/Q==
 
-"@maginapp/vuepress-plugin-katex@^1.0.11":
-  version "1.0.11"
-  resolved "http://registry.npm.baidu-int.com/@maginapp%2fvuepress-plugin-katex/-/vuepress-plugin-katex-1.0.11.tgz#da8f7d7f43c53c1f4b383e67f1e49710da9d058c"
-  integrity sha512-QsO8FxU790DGkcBVIcoRxKeySqmma5PnPEmRjmsQW2nYH01bUHdQwOEB2ny1nAWL3PU8m09lMsVyGkMfue8DXw==
-  dependencies:
-    katex "^0.11.1"
-    markdown-it-texmath "^0.6.7"
-
 "@types/node@^18.13.0":
   version "18.13.0"
   resolved "http://registry.npm.baidu-int.com/@types%2fnode/-/node-18.13.0.tgz#0400d1e6ce87e9d3032c19eb6c58205b0d3f7850"
@@ -440,11 +432,6 @@ body-scroll-lock@4.0.0-beta.0:
   resolved "http://registry.npm.baidu-int.com/body-scroll-lock/-/body-scroll-lock-4.0.0-beta.0.tgz#4f78789d10e6388115c0460cd6d7d4dd2bbc4f7e"
   integrity sha512-a7tP5+0Mw3YlUJcGAKUqIBkYYGlYxk2fnCasq/FUph1hadxlTRjF+gAcZksxANnaMnALjxEddmSi/H3OR8ugcQ==
 
-commander@^2.19.0:
-  version "2.20.3"
-  resolved "http://registry.npm.baidu-int.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
-  integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
-
 csstype@^2.6.8:
   version "2.6.21"
   resolved "http://registry.npm.baidu-int.com/csstype/-/csstype-2.6.21.tgz#2efb85b7cc55c80017c66a5ad7cbd931fda3a90e"
@@ -532,24 +519,12 @@ jsonc-parser@^3.2.0:
   resolved "http://registry.npm.baidu-int.com/jsonc-parser/-/jsonc-parser-3.2.0.tgz#31ff3f4c2b9793f89c67212627c51c6394f88e76"
   integrity sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==
 
-katex@^0.11.1:
-  version "0.11.1"
-  resolved "http://registry.npm.baidu-int.com/katex/-/katex-0.11.1.tgz#df30ca40c565c9df01a466a00d53e079e84ffaa2"
-  integrity sha512-5oANDICCTX0NqYIyAiFCCwjQ7ERu3DQG2JFHLbYOf+fXaMoH8eg/zOq5WSYJsKMi/QebW+Eh3gSM+oss1H/bww==
-  dependencies:
-    commander "^2.19.0"
-
 magic-string@^0.25.7:
   version "0.25.9"
   resolved "http://registry.npm.baidu-int.com/magic-string/-/magic-string-0.25.9.tgz#de7f9faf91ef8a1c91d02c2e5314c8277dbcdd1c"
   integrity sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==
   dependencies:
     sourcemap-codec "^1.4.8"
-
-markdown-it-texmath@^0.6.7:
-  version "0.6.9"
-  resolved "http://registry.npm.baidu-int.com/markdown-it-texmath/-/markdown-it-texmath-0.6.9.tgz#709f45b3c7f76a5f0157baf819ae80b9499a9ab4"
-  integrity sha512-0Nz9yycwji3r776RCG2lmCsc2bk+lovsaPQklNR3VZMobQ9x45TRMWo2E/J5bejG3qN58MuBKDQWhIA0r1AWVw==
 
 nanoid@^3.3.4:
   version "3.3.4"
