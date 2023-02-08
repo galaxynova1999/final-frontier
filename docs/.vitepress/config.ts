@@ -2,6 +2,10 @@ import {defineConfig} from "vitepress";
 import * as fs from 'fs';
 import fm from 'front-matter';
 import * as path from "path";
+import {createRequire} from 'module';
+const require = createRequire(import.meta.url);
+
+const MdKatex = require('@iktakahiro/markdown-it-katex')
 
 export const articlePath = path.resolve(__dirname, '../article');
 
@@ -96,22 +100,28 @@ const {side: basicNav, firstFileName: basicFilename} = generateBar('/basic/', ba
 export default defineConfig({
     base: '/final-frontier/',
     title: 'Final-Frontier',
-    // plugins: [
-    //     '@vuepress/nprogress',
-    //     '@vuepress/back-to-top',
-    //     'reading-progress',
-    //     ['@maginapp/katex', { delimiters: 'dollars' }]
-    // ],
     head: [
         [
             'link',
             { rel: 'icon', href: '/final-frontier/favicon.png'}
+        ],
+        [
+          'link',
+          {
+            rel: "stylesheet",
+            href: "https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css",
+            integrity: 'sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0',
+            crossorigin: 'anonymous'
+          }
         ]
     ],
     lastUpdated: true,
     lang: 'zh-CN',
     markdown: {
       lineNumbers: true,
+      config: (md) => {
+        md.use(MdKatex, { delimiters: 'dollars' });
+      }
     },
     themeConfig: {
         logo: '/favicon.png',
