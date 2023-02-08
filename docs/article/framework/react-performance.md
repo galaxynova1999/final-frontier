@@ -1,8 +1,9 @@
 ---
 title: React性能优化的一点看法
+sidebarDepth: 3
 ---
 
-[[toc]]
+# React性能优化的一点看法 {#index}
 
 ### 从re-render说起
 

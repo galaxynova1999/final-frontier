@@ -33,7 +33,7 @@ npm i -y
 npm i -S webpack webpack-cli webpack-dev-server html-webpack-plugin
 ```
 
-- 配置文件`webpack.config.js`
+- 配置文件`webpack.config.ts`
 ```js
 const path = require('path')
 const webpack = require('webpack')
@@ -178,7 +178,7 @@ dist目录结构
 
 接下来配置并感受一下热更新带来的便捷开发
 
-`webpack.config.js`配置
+`webpack.config.ts`配置
 ```js
   // ...
   devServer: {

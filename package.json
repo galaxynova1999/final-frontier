@@ -1,19 +1,19 @@
 {
   "name": "final-frontier",
   "version": "0.0.1",
-  "description": "A Personal Technical Blog Powered By VuePress",
+  "description": "A Personal Technical Blog Powered By VitePress",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "dev:no-chche": "vuepress dev docs --no-cache",
-    "build": "vuepress build docs"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "author": "wangjie",
   "license": "ISC",
   "devDependencies": {
     "@maginapp/vuepress-plugin-katex": "^1.0.11",
-    "@vuepress/plugin-back-to-top": "^1.8.2",
-    "@vuepress/plugin-nprogress": "^1.8.2",
-    "vuepress": "^1.8.2",
-    "vuepress-plugin-reading-progress": "^1.0.10"
+    "@types/node": "^18.13.0",
+    "front-matter": "^4.0.2",
+    "typescript": "^4.9.5",
+    "vitepress": "^1.0.0-alpha.45"
   }
 }
