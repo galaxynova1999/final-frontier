@@ -8,12 +8,12 @@
     "docs:preview": "vitepress preview docs"
   },
   "author": "wangjie",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.13.0",
     "front-matter": "^4.0.2",
     "typescript": "^4.9.5",
-    "vitepress": "^1.0.0-alpha.45"
+    "vitepress": "^1.0.0-alpha.75"
   },
   "dependencies": {
     "@iktakahiro/markdown-it-katex": "^4.0.1"

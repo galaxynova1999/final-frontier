@@ -11,7 +11,7 @@ title: 浏览器Navigation Timing API
 
 ## Navigation Timing Level 1 (已过时)
 
-```text
+```txt
 [Exposed=Window]
 interface PerformanceTiming {
   readonly attribute unsigned long long navigationStart;

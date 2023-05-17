@@ -1,5 +1,5 @@
 ---
-title: 剑指 Offer 40. 最小的k个数
+title: 40. 最小的k个数
 ---
 :::tip 原题链接
 [LeetCode](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/)

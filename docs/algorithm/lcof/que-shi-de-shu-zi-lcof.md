@@ -1,5 +1,5 @@
 ---
-title: 剑指 Offer 53 - II. 0～n-1中缺失的数字
+title: 53. 0～n-1中缺失的数字
 ---
 :::tip 原题链接
 [LeetCode](https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/)

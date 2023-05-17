@@ -7,23 +7,111 @@ const require = createRequire(import.meta.url);
 
 const MdKatex = require('@iktakahiro/markdown-it-katex')
 
-export const articlePath = path.resolve(__dirname, '../article');
+const articlePath = path.resolve(__dirname, '../article');
 
-export const algorithmPath = path.resolve(__dirname, '../algorithm');
+const algorithmPath = path.resolve(__dirname, '../algorithm');
 
-export const notesPath = path.resolve(__dirname, '../notes');
+const notesPath = path.resolve(__dirname, '../notes');
 
-export const basicPath = path.resolve(__dirname, '../basic');
+const basicPath = path.resolve(__dirname, '../basic');
+
+const customElements = [
+  'math',
+  'maction',
+  'maligngroup',
+  'malignmark',
+  'menclose',
+  'merror',
+  'mfenced',
+  'mfrac',
+  'mi',
+  'mlongdiv',
+  'mmultiscripts',
+  'mn',
+  'mo',
+  'mover',
+  'mpadded',
+  'mphantom',
+  'mroot',
+  'mrow',
+  'ms',
+  'mscarries',
+  'mscarry',
+  'mscarries',
+  'msgroup',
+  'mstack',
+  'mlongdiv',
+  'msline',
+  'mstack',
+  'mspace',
+  'msqrt',
+  'msrow',
+  'mstack',
+  'mstack',
+  'mstyle',
+  'msub',
+  'msup',
+  'msubsup',
+  'mtable',
+  'mtd',
+  'mtext',
+  'mtr',
+  'munder',
+  'munderover',
+  'semantics',
+  'math',
+  'mi',
+  'mn',
+  'mo',
+  'ms',
+  'mspace',
+  'mtext',
+  'menclose',
+  'merror',
+  'mfenced',
+  'mfrac',
+  'mpadded',
+  'mphantom',
+  'mroot',
+  'mrow',
+  'msqrt',
+  'mstyle',
+  'mmultiscripts',
+  'mover',
+  'mprescripts',
+  'msub',
+  'msubsup',
+  'msup',
+  'munder',
+  'munderover',
+  'none',
+  'maligngroup',
+  'malignmark',
+  'mtable',
+  'mtd',
+  'mtr',
+  'mlongdiv',
+  'mscarries',
+  'mscarry',
+  'msgroup',
+  'msline',
+  'msrow',
+  'mstack',
+  'maction',
+  'semantics',
+  'annotation',
+  'annotation-xml'
+]
 
 
-export const algorithmMap = new Map([
+const algorithmMap = new Map([
   ['leetcode', {name: 'LeetCode', order: 1, collapsable: false}],
   ['lcof', {name: '剑指Offer', order: 2, collapsable: false}],
   ['extra', { name: '补充题', order: 3, collapsable: false}],
   ['lcci', { name: '面试题', order: 4, collapsable: false}]
 ]);
 
-export const articleMap = new Map([
+const articleMap = new Map([
   ['framework', {name: '前端框架', order: 1, collapsable: false}],
   ['js', {name: 'JS & TS', order: 2, collapsable: false}],
   ['browser', {name: '浏览器', order: 5, collapsable: false}],
@@ -32,19 +120,19 @@ export const articleMap = new Map([
   ['tech', {name: '技术扩展', order: 4, collapsable: false}],
 ]);
 
-export const notesMap = new Map([
+const notesMap = new Map([
   ['professional-js-for-web-developers', {name: 'JS高级程序设计', order: 1, collapsable: false}],
   ['you-dont-know-js',{name: '你不知道的JS', order: 2, collapsable: false}]
 ]);
 
-export const basicMap = new Map([
+const basicMap = new Map([
   ['js', {name: 'JS & ES6', order: 1, collapsable: false}],
   ['css', {name: 'CSS', order: 2, collapsable: false}],
   ['data-structure', {name: '数据结构', order: 3, collapsable: false}]
 ]);
 
 
-export const generateBar = (prefix: string, pathname: string, pathNameMap: Map<string, {name: string; order: number; collapsable: boolean}>) => {
+const generateBar = (prefix: string, pathname: string, pathNameMap: Map<string, {name: string; order: number; collapsable: boolean}>) => {
   const directory = fs.readdirSync(pathname);
   const exportObject: Array<{text: string; collapsable: boolean; items: Array<{text: string; link: string}>}> = [];
   directory.sort((a, b) => {
@@ -76,7 +164,15 @@ export const generateBar = (prefix: string, pathname: string, pathNameMap: Map<s
         }
 
         return prev;
-      }, [] as any);
+      }, [] as Array<{ text: string; link: string }>);
+
+      // 按序号排序
+      if(dir === 'leetcode' || dir === 'lcof') {
+        filenames.sort((a, b) => {
+          return parseInt(a.text, 10) - parseInt(b.text, 10);
+        })
+      }
+
       if(filenames.length) {
         exportObject.push({
           text: `${pathNameMap.get(dir)?.name} (${filenames.length})`,
@@ -98,6 +194,14 @@ const {side: basicNav, firstFileName: basicFilename} = generateBar('/basic/', ba
 
 
 export default defineConfig({
+    // https://github.com/vuejs/vitepress/issues/529
+    vue: {
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => customElements.includes(tag),
+        }
+      }
+    },
     base: '/final-frontier/',
     title: 'Final-Frontier',
     head: [
@@ -124,6 +228,7 @@ export default defineConfig({
       }
     },
     themeConfig: {
+        i18nRouting: false,
         logo: '/favicon.png',
         socialLinks: [
           { icon: 'github', link: 'https://github.com/galaxynova1999' },
@@ -149,6 +254,29 @@ export default defineConfig({
           prev: '上一篇文章',
           next: '下一篇文章',
         },
-        returnToTopLabel: '返回顶部'
+        outline: {
+          label: '目录'
+        },
+        returnToTopLabel: '返回顶部',
+        search: {
+          provider: 'local',
+          options: {
+            translations: {
+              button: {
+                buttonText: '搜索文档',
+                buttonAriaLabel: '搜索文档'
+              },
+              modal: {
+                noResultsText: '无法找到相关结果',
+                resetButtonTitle: '清除查询条件',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换',
+                  closeText: '关闭'
+                }
+              }
+            },
+          }
+        }
     },
 })
