@@ -233,7 +233,9 @@ export default defineConfig({
         socialLinks: [
           { icon: 'github', link: 'https://github.com/galaxynova1999' },
         ],
-        lastUpdatedText: '上次更新',
+        lastUpdated: {
+          text: '上次更新'
+        },
         nav: [
             { text: '首页', link: '/' },
             { text: '博文', link: `/article/${articleFilename}` },

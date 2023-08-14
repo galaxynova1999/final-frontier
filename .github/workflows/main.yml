@@ -14,12 +14,12 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
-          cache: npm
-      - run: npm i
+          node-version: 18
+          cache: yarn
+      - run: yarn install
 
       - name: Build
-        run: npm run docs:build
+        run: yarn run docs:build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

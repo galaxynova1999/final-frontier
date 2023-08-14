@@ -9,11 +9,12 @@
   },
   "author": "wangjie",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
     "@types/node": "^18.13.0",
     "front-matter": "^4.0.2",
     "typescript": "^4.9.5",
-    "vitepress": "^1.0.0-alpha.75"
+    "vitepress": "^1.0.0-rc.4"
   },
   "dependencies": {
     "@iktakahiro/markdown-it-katex": "^4.0.1"
