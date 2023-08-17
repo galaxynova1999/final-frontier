@@ -17,6 +17,10 @@ function firstMissingPositive(nums: number[]): number {
            nums[i] <= nums.length &&
            nums[nums[i] - 1] !== nums[i]
        ) {
+            // 以下交换算法有问题 会导致值不对
+           // [nums[i], nums[nums[i] - 1]] = [nums[nums[i] - 1], nums[i]];
+           // 这样的是对的 [nums[nums[i] - 1], nums[i]] = [nums[i], nums[nums[i] - 1]];
+           // 原因是 右侧按顺序解构 如果先修改了num[i]的值 后面再读取时 就读取了解构后的值
            // 不停的交换
            [nums[nums[i] - 1], nums[i]] = [nums[i], nums[nums[i] - 1]];
        }
