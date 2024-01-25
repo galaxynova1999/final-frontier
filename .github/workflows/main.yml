@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 18
           cache: yarn
-      - run: yarn install --registry https://registry.npm.taobao.org
+      - run: yarn install --registry https://registry.npmmirror.com
 
       - name: Build
         run: yarn run docs:build
