@@ -743,7 +743,7 @@ vite@^5.0.12:
 
 vitepress@^1.0.0-rc.40:
   version "1.0.0-rc.40"
-  resolved "http://registry.npm.baidu-int.com/vitepress/-/vitepress-1.0.0-rc.40.tgz#ad63f04c5296fc20daf32a4edd46677e95398eca"
+  resolved "https://registry.npmmirror.com/vitepress/-/vitepress-1.0.0-rc.40.tgz#ad63f04c5296fc20daf32a4edd46677e95398eca"
   integrity sha512-1x9PCrcsJwqhpccyTR93uD6jpiPDeRC98CBCAQLLBb44a3VSXYBPzhCahi+2kwAYylu49p0XhseMPVM4IVcWcw==
   dependencies:
     "@docsearch/css" "^3.5.2"
